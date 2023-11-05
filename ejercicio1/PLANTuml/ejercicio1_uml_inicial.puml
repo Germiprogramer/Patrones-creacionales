@@ -1,0 +1,42 @@
+@startuml
+
+abstract class Estadisticas {
+  +calcular(datos: DataFrame): float
+}
+
+abstract class Visualizacion {
+  +mostrar(datos: DataFrame): void
+}
+
+class MediaActivaciones {
+  +calcular(datos: DataFrame): float
+}
+
+class HistogramaActivacionesPorTipo {
+  +mostrar(datos: DataFrame): void
+}
+
+class GraficoBarrasActivacionesPorMes {
+  +mostrar(datos: DataFrame): void
+}
+
+abstract class AbstractFactory {
+  +crear_estadisticas(): Estadisticas
+  +crear_visualizacion(): Visualizacion
+}
+
+class SAMURFactory {
+  +crear_estadisticas(): Estadisticas
+  +crear_visualizacion(): Visualizacion
+}
+
+Estadisticas <|-- MediaActivaciones
+Visualizacion <|-- HistogramaActivacionesPorTipo
+Visualizacion <|-- GraficoBarrasActivacionesPorMes
+AbstractFactory <|-- SAMURFactory
+
+MediaActivaciones ..> DataFrame : utiliza
+HistogramaActivacionesPorTipo ..> DataFrame : utiliza
+GraficoBarrasActivacionesPorMes ..> DataFrame : utiliza
+
+@enduml
