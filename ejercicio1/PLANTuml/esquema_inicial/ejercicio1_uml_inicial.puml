@@ -1,4 +1,4 @@
-@startuml
+@startuml inicial
 
 abstract class Estadisticas {
   +calcular(datos: DataFrame): float

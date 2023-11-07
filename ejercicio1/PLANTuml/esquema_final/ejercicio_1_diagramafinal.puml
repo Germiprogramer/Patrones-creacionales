@@ -1,0 +1,87 @@
+@startuml final
+
+abstract class AbstractFactory {
+    datos
+    +moda(): AbstractModa
+    +media(): AbstractMedia
+}
+
+class ConcreteFactory_HoraSolicitud {
+    +moda(): AbstractModa
+    +media(): AbstractMedia
+}
+
+class ConcreteFactory_HoraIntervencion {
+    +moda(): AbstractModa
+    +media(): AbstractMedia
+}
+
+class ConcreteFactory_Mes {
+    +moda(): AbstractModa
+    +media(): AbstractMedia
+}
+
+interface AbstractModa {
+    +calcular(): pd.Series
+}
+
+class ConcreteModa_HoraSolicitud {
+    datos
+    +calcular(): pd.Series
+}
+
+class ConcreteModa_HoraIntervencion {
+    datos
+    +calcular(): pd.Series
+}
+
+class ConcreteModa_Mes {
+    datos
+    +calcular(): pd.Series
+}
+
+interface AbstractMedia {
+    +calcular(): pd.Series
+}
+
+class ConcreteMedia_HoraSolicitud {
+    datos
+    +calcular(): pd.Series
+}
+
+class ConcreteMedia_HoraIntervencion {
+    datos
+    +calcular(): pd.Series
+}
+
+class ConcreteMedia_Mes {
+    datos
+    +calcular(): pd.Series
+}
+
+class Client {
+    +client_code_moda(factory: AbstractFactory): None
+    +client_code_media(factory: AbstractFactory): None
+}
+
+AbstractFactory <|-- ConcreteFactory_HoraSolicitud
+AbstractFactory <|-- ConcreteFactory_HoraIntervencion
+AbstractFactory <|-- ConcreteFactory_Mes
+AbstractModa <|.. ConcreteModa_HoraSolicitud
+AbstractModa <|.. ConcreteModa_HoraIntervencion
+AbstractModa <|.. ConcreteModa_Mes
+AbstractMedia <|.. ConcreteMedia_HoraSolicitud
+AbstractMedia <|.. ConcreteMedia_HoraIntervencion
+AbstractMedia <|.. ConcreteMedia_Mes
+
+Client --> AbstractFactory : Uses
+Client --> AbstractModa : Uses
+Client --> AbstractMedia : Uses
+ConcreteModa_HoraSolicitud --> AbstractModa : Implements
+ConcreteModa_HoraIntervencion --> AbstractModa : Implements
+ConcreteModa_Mes --> AbstractModa : Implements
+ConcreteMedia_HoraSolicitud --> AbstractMedia : Implements
+ConcreteMedia_HoraIntervencion --> AbstractMedia : Implements
+ConcreteMedia_Mes --> AbstractMedia : Implements
+
+@enduml
