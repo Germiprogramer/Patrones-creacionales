@@ -13,7 +13,7 @@ class ConstructorPizzaPersonalizada(Pizza):
 
     def nombre(self) -> None:
         nombre = input("Escribe el nombre de tu pizza: ")
-        print(f"Nombre: {nombre}")
+        return nombre
 
     @property
     def product(self) -> PizzaPersonalizada:

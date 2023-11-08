@@ -22,7 +22,7 @@ class ConstructorPizzaBarbacoa(Pizza):
         return self._product
     
     def nombre(self) -> None:
-        print("Pizza Barbacoa")
+        return "Pizza Barbacoa"
     
     def masa(self) -> None:
         self._product.add("Masa con especias")
