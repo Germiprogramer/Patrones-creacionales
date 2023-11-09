@@ -1,10 +1,3 @@
-usuario;nombre;apellido;direccion;telefono;email;contrasenia;n_pedidos;dinero
-juan;Juan;Perez;Calle 123, Ciudad A;123-456-789;juan.perez@email.com;clave123;5;500
-maria;Maria;Gomez;Avenida 456, Ciudad B;234-567-890;maria.gomez@email.com;password123;8;800
-carlos;Carlos;Lopez;Calle 789, Ciudad C;345-678-901;carlos.lopez@email.com;securepass;12;1200
-laura;Laura;Martinez;Calle 101, Ciudad D;456-789-012;laura.martinez@email.com;mypassword;3;300
-germanllorente;Germán;Llorente;Calle 101, Ciudad D;457-789-012;german.llorente@email.com;abc;3;300cristiani,cristiano,dwuoeuo,616397733,cristiano@gmail,SIUUU,0,100
-cristiani,cristiano,dwuoeuo,616397733,cristiano@gmail,SIUUU,0,100
-moyis,Ruben,suputacasa,notiene,rnoguer@,caca,0,100
-,,,,,,0,100
-pelayo,kdd,mdc,mldk,kfefvd,contr,0,100
+usuario;contraseña;nombre;direccion;telefono;email
+germanllorente,abc,German Llorente,Bolivia 1,613397843,german@gmail,0,100
+alexmunlo,bxd,Alex Muñoz,Bolivia 1,777777777,alex@munlo,0,100

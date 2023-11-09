@@ -1,20 +1,14 @@
 class Cliente:
-    def __init__(self, usuario, nombre, apellido, direccion, telefono, email, contrasenia, n_pedidos, dinero):
+    def __init__(self, usuario, nombre, direccion, telefono, email, contrasenia):
         self.usuario = usuario
         self.nombre = nombre
-        self.apellido = apellido
         self.direccion = direccion
         self.telefono = telefono
         self.email = email
         self.contrasenia = contrasenia
-        self.n_pedidos = n_pedidos
-        self.dinero = dinero
-       
-
 
     def __str__(self):
-        return f"({self.dni}) {self.nombre} {self.apellido} - Dinero: {self.dinero}"
+        return f"Usuario: {self.usuario}, Nombre: {self.nombre}, Dirección: {self.direccion}, Teléfono: {self.telefono}, Email: {self.email}"
 
     def to_dict(self):
-        return {'dni': self.dni, 'nombre': self.nombre, 'apellido': self.apellido, 'dinero': self.dinero}
-    
+        return {'usuario': self.usuario, 'nombre': self.nombre, 'direccion': self.direccion, 'telefono': self.telefono, 'email': self.email}
