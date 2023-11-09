@@ -4,6 +4,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import os
 
+# Define una clase abstracta para las fábricas de análisis estadístico
 class AbstractFactory(ABC):
 
     def __init__(self, datos):
@@ -21,6 +22,7 @@ class AbstractFactory(ABC):
     def grafico(self) -> AbstractGrafico:
         pass
 
+# Define clases concretas para las fábricas de análisis estadístico de 'Hora Solicitud', 'Hora Intervención' y 'Mes'
 class ConcreteFactory_HoraSolicitud(AbstractFactory):
 
     def moda(self) -> AbstractModa:
@@ -54,11 +56,13 @@ class ConcreteFactory_Mes(AbstractFactory):
     def grafico(self) -> AbstractGrafico:
         return ConcreteGrafico_Mes(self.datos)
 
+# Define clases abstractas para calcular la moda
 class AbstractModa(ABC):
     @abstractmethod
     def calcular(self) -> pd.Series:
         pass
 
+# Define clases concretas para calcular la moda de 'Hora Solicitud', 'Hora Intervención' y 'Mes'
 class ConcreteModa_HoraSolicitud(AbstractModa):
     def __init__(self, datos):
         self.datos = datos
@@ -80,11 +84,13 @@ class ConcreteModa_Mes(AbstractModa):
     def calcular(self) -> pd.Series:
         return self.datos['Mes'].mode()
 
+# Define clases abstractas para calcular la media
 class AbstractMedia(ABC):
     @abstractmethod
     def calcular(self) -> pd.Series:
         pass
 
+# Define clases concretas para calcular la media de 'Hora Solicitud', 'Hora Intervención' y 'Mes'
 class ConcreteMedia_HoraSolicitud(AbstractMedia):
     def __init__(self, datos):
         self.datos = datos
@@ -106,12 +112,14 @@ class ConcreteMedia_Mes(AbstractMedia):
     def calcular(self) -> pd.Series:
         return self.datos['Mes'].mean()
 
+# Define clases abstractas para generar gráficos
 class AbstractGrafico(ABC):
     @abstractmethod
     def generar_grafico(self) -> None:
         pass
 
 
+# Define clases concretas para generar gráficos de 'Hora Solicitud', 'Hora Intervención' y 'Mes'
 class ConcreteGrafico_HoraSolicitud(AbstractGrafico):
     def __init__(self, datos):
         self.datos = datos
@@ -154,6 +162,7 @@ class ConcreteGrafico_Mes(AbstractGrafico):
         plt.savefig(os.path.join('ejercicio1/graficos', 'grafico_mes.png'))  # Guarda el gráfico en la carpeta "grafos"
         plt.close()
 
+# Define una clase cliente para construir objetos complejos paso a paso
 def client_code_moda(factory: AbstractFactory) -> None:
     moda = factory.moda()
     
