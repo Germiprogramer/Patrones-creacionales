@@ -3,10 +3,10 @@ import csv
 from builder.Director import *
 from Cliente import Cliente  # Asegúrate de importar la clase Cliente desde el archivo correspondiente
 
-class PizzeriaApp:
+
+class Menu:
     def __init__(self, root):
-        self.root = root
-        self.root.title("Pizzería")
+        
 
         self.label_usuario = tk.Label(root, text="Usuario:")
         self.label_usuario.pack()
@@ -33,11 +33,17 @@ class PizzeriaApp:
         # Configurar el director y el constructor adecuado
         self.director = Director()
         self.builder = None
+        print("Menu creado")
+
+    def iniciar_interfaz(self):
+        root = tk.Tk()
+        self.__init__(root)
+        root.mainloop()
 
     def cargar_clientes(self, archivo):
         clientes = []
         with open(archivo, "r") as file:
-            reader = csv.DictReader(file, delimiter=';')
+            reader = csv.DictReader(file, delimiter=',')
             for row in reader:
                 cliente = Cliente(row['usuario'],  row['contrasenia'], row['nombre'], row['direccion'], row['telefono'],
                                   row['email'],)
@@ -45,6 +51,7 @@ class PizzeriaApp:
         return clientes
 
     def realizar_pedido(self):
+        print("Realizando pedido")
         usuario = self.entry_usuario.get()
         tipo_pedido = self.entry_pedido.get()
 
@@ -68,14 +75,15 @@ class PizzeriaApp:
         
 
         if self.builder:
+            print("Builder creado")
             self.director.builder = self.builder
             self.director.build()
 
             # Guardar el pedido en un archivo CSV con columnas separadas para cada atributo
             with open("ejercicio2/datos/pedidos.csv", "a", newline="") as file:
-                writer = csv.writer(file, delimiter=';')
+                writer = csv.writer(file, delimiter=',')
                 
-                writer.writerow([usuario, tipo_pedido, pizza.masa, pizza.salsa_base, ', '.join(pizza.ingredientes), pizza.maridaje, pizza.coccion])
+                writer.writerow([usuario, tipo_pedido, pizza.masa, pizza.salsa_base, pizza.ingredientes, pizza.maridaje, pizza.coccion])
                 
             self.resultado_label.config(text=f"Pedido de {usuario}: {tipo_pedido} realizado con éxito!")
         else:
@@ -83,7 +91,4 @@ class PizzeriaApp:
 
 
 
-if __name__ == "__main__":
-    root = tk.Tk()
-    app = PizzeriaApp(root)
-    root.mainloop()
+
