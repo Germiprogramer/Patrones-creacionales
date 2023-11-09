@@ -1,5 +1,7 @@
 # Patrones-creacionales
 
+El link al repositorio es el siguiente: https://github.com/Germiprogramer/Patrones-creacionales.git
+
 # Ejercicio 1
 
 Se ha decidido crear una fábrica para realizar análisis estadísticos. Los resultados se presentan a continuación, considerando que las horas se han expresado en minutos:
