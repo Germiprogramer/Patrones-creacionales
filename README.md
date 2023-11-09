@@ -21,3 +21,23 @@ Se ha decidido crear una fábrica para realizar análisis estadísticos. Los res
 - **Media:** La media es aproximadamente 6.66, indicando un promedio de 6 meses y 19 días. Dado que los meses son valores discretos y se expresan como números enteros, este valor podría representar una media ponderada en algún contexto específico, pero sin más información, es difícil interpretar su significado exacto.
 
 La información sobre las horas y meses de mayor frecuencia puede ser útil para la planificación y gestión de recursos en función de los momentos de mayor demanda. Además, cabe destacar un punto extraño, y es que la hora media de intervención es antes que la hora media de solicitud. Esto se debe a que algunas solictudes nocturnas son intervenidasen la madrugada del día siguiente, causando un malente,dido en nuestro análisis.
+
+# Ejercicio 2
+
+**Justificación patron builder**
+
+El patrón Builder es un patrón creacional que se utiliza para construir objetos complejos paso a paso. En el caso de una pizzería, este patrón se adapta perfectamente para crear pizzas con diferentes combinaciones de ingredientes, masa, salsa, cocción, presentación, maridaje y extras. Vamos a justificar el uso del patrón Builder en este contexto.
+
+1. **Separación de la construcción y la representación:** Uno de los principios clave del patrón Builder es separar la construcción de un objeto complejo de su representación. En el contexto de una pizzería, hay muchas formas diferentes de combinar ingredientes, tipos de masa, salsas, y demás. Usando el patrón Builder, puedes encapsular todo ese proceso complejo en una clase PizzaBuilder separada, permitiendo que la pizzería construya pizzas de manera flexible y sin necesidad de conocer los detalles internos de cómo se ensamblan las pizzas.
+
+2. **Facilita la creación de objetos complejos:** Imagina una pizzería que ofrece pizzas con una amplia gama de ingredientes y opciones personalizables. Al utilizar el patrón Builder, puedes tener diferentes constructores para diferentes tipos de pizzas (por ejemplo, PizzaMargheritaBuilder, PizzaHawaianaBuilder, etc.). Cada constructor sabe cómo ensamblar una pizza específica, simplificando el proceso de creación de pizzas complejas.
+
+3. **Mejora la legibilidad del código:** Al usar el patrón Builder, el código cliente (por ejemplo, el código que realiza el pedido en la pizzería) se vuelve mucho más legible. En lugar de tener constructoras largas y complejas con múltiples argumentos, puedes tener un flujo claro y fácil de entender utilizando los métodos proporcionados por el Builder. Esto hace que el código sea más fácil de mantener y entender para los desarrolladores.
+
+4. **Permite variaciones en la construcción:** Uno de los beneficios del patrón Builder es que permite la variación en la construcción de objetos. Por ejemplo, algunas pizzas pueden tener ingredientes adicionales, o la masa puede ser fina o gruesa. Al proporcionar métodos específicos para cada componente de la pizza, puedes variar fácilmente las combinaciones sin cambiar el código del cliente.
+
+5. **Código más robusto y fácil de extender:** Utilizando el patrón Builder, puedes hacer que tu código sea más robusto y fácil de extender en el futuro. Si en el futuro decides agregar nuevos tipos de pizzas o componentes, puedes crear nuevos constructores sin cambiar el código existente. Esto sigue el principio de diseño abierto/cerrado (Open/Closed Principle) en el que las clases están abiertas para la extensión pero cerradas para la modificación.
+
+6. **Encapsulación de la lógica de construcción:** Al encapsular la lógica de construcción dentro de la clase PizzaBuilder, puedes ocultar los detalles de implementación de cómo se ensamblan las pizzas. Esto proporciona una capa de abstracción que protege el código cliente de cambios en la forma en que se construyen las pizzas. Si en el futuro cambias la forma en que se preparan ciertos ingredientes, solo necesitas actualizar el código dentro del builder sin afectar al resto de la aplicación.
+
+En resumen, el patrón Builder es una elección sólida para el diseño de una pizzería porque proporciona una forma estructurada y flexible de construir pizzas complejas con numerosas combinaciones posibles de ingredientes y opciones, al mismo tiempo que mejora la legibilidad, la mantenibilidad y la extensibilidad del código.
