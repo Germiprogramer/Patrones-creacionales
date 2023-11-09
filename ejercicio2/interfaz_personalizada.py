@@ -2,6 +2,7 @@ import tkinter as tk
 import csv
 from tkinter import messagebox
 from builder.Director import *
+from collections import Counter
 
 def interfaz_personalizada():
 
@@ -9,6 +10,8 @@ def interfaz_personalizada():
     director = Director()
     builder = ConstructorPizzaPersonalizada()
     director.builder = builder
+
+    
 
     # Function to handle pizza order
     def place_order():

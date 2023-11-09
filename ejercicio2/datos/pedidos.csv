@@ -1,4 +1,4 @@
-usuario,tipo,masa,salsa,ingredientes,borde,tamaño,maridaje,extra
+usuario,tipo,masa,salsa,ingredientes,coccion,presentacion,maridaje,extra
 germanllorente,barbacoa,Pizza Barbacoa
 germanllorente,Personalizada,s
 germanllorente14,personalizada,
@@ -8,3 +8,5 @@ GERMI, personalizada, Delgada,Tomate,DS,Suave,Normal,Vino tinto,S
 germanllorente, personalizada, Delgada,Tomate,tomate; lechuga; messi,Suave,Normal,Refresco,tarta de queso
 germanllorente,personalizada,Delgada,Tomate,d,Suave,Normal,Vino tinto,d
 germanllorente,personalizada,Gruesa,Blanca,platano-macadamia,Suave,Normal,Vino tinto,none
+germanllorente,personalizada,Delgada,Tomate,tomate,Suave,Normal,Vino tinto,tarta de quesp
+germanllorente,personalizada,Delgada,Tomate,salchichas,Suave,Normal,Vino tinto,tarta de queso

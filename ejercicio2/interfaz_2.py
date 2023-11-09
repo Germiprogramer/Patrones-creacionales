@@ -21,10 +21,24 @@ def interfaz2():
         df_filtrado = df[df["usuario"] == nombre_usuario]
 
         dato_mas_repetido = df_filtrado["tipo"].mode().iloc[0]
+        
+        if str(dato_mas_repetido) != "personalizada":
 
-        recomendacion = str(dato_mas_repetido)
+            print(dato_mas_repetido)
+            
+            recomendacion = str(dato_mas_repetido)
 
-        resultado.config(text=recomendacion)
+            resultado.config(text=recomendacion)
+        else:
+            masa_repetida = df_filtrado["masa"].mode().iloc[0]
+            salsa_repetida = df_filtrado["salsa"].mode().iloc[0]
+            coccion_repetida = df_filtrado["coccion"].mode().iloc[0]
+            presentacion_repetida = df_filtrado["presentacion"].mode().iloc[0]
+            maridaje_repetido = df_filtrado["maridaje"].mode().iloc[0]
+
+            resultado.config(text=(masa_repetida, salsa_repetida, coccion_repetida, presentacion_repetida, maridaje_repetido))
+
+
 
     def menu_option():
         messagebox.showinfo("Opción Seleccionada", "Has seleccionado: Menú")
@@ -52,6 +66,7 @@ def interfaz2():
 
     resultado = tk.Label(options_window, text="")
     resultado.pack(pady=10)
+
 
     menu_button = tk.Button(options_window, text="Menú", command=menu_option)
     menu_button.pack(pady=10)
