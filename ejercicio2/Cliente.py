@@ -1,3 +1,4 @@
+# clase Cliente
 class Cliente:
     def __init__(self, usuario, nombre, direccion, telefono, email, contrasenia):
         self.usuario = usuario

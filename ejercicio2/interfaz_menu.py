@@ -3,7 +3,7 @@ import csv
 from builder.Director import *
 from Cliente import Cliente  # Asegúrate de importar la clase Cliente desde el archivo correspondiente
 
-
+# Clase para la interfaz del menú
 class Menu:
     def __init__(self, root):
         
@@ -35,11 +35,13 @@ class Menu:
         self.builder = None
         print("Menu creado")
 
+    # Función para iniciar la interfaz
     def iniciar_interfaz(self):
         root = tk.Tk()
         self.__init__(root)
         root.mainloop()
 
+    # Función para cargar los datos de los clientes desde el archivo CSV
     def cargar_clientes(self, archivo):
         clientes = []
         with open(archivo, "r") as file:
@@ -49,7 +51,8 @@ class Menu:
                                   row['email'],)
                 clientes.append(cliente)
         return clientes
-
+    
+    # Función para realizar el pedido
     def realizar_pedido(self):
         print("Realizando pedido")
         usuario = self.entry_usuario.get()

@@ -2,6 +2,7 @@ from __future__ import annotations
 from abc import ABC, abstractmethod
 from typing import Any
 
+# Compare this snippet from ejercicio2/builder/Pizza_Margherita.py:
 class Pizza(ABC):
     """
     The Builder interface specifies methods for creating the different parts of

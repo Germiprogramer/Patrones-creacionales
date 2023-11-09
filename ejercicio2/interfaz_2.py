@@ -5,6 +5,7 @@ from interfaz_menu import *
 from interfaz_personalizada import *
 import pandas as pd
 
+# Función para que el usuario pueda elegir entre una pizza del menú o una personalizada
 def interfaz2():
 
     options_window = tk.Tk()
@@ -12,7 +13,7 @@ def interfaz2():
     
     tk.Label(options_window, text="Elige una opción:").pack(pady=10)
     
-
+    # Función para obtener la recomendación de pizza del usuario
     def hacer_recomendacion():
         df = pd.read_csv('ejercicio2/datos/pedidos.csv')
 
@@ -39,7 +40,7 @@ def interfaz2():
             resultado.config(text=(masa_repetida, salsa_repetida, coccion_repetida, presentacion_repetida, maridaje_repetido))
 
 
-
+    # Función para mostrar la interfaz del menú
     def menu_option():
         messagebox.showinfo("Opción Seleccionada", "Has seleccionado: Menú")
         options_window.destroy()  # Cerrar la ventana de opciones
@@ -49,13 +50,14 @@ def interfaz2():
         app.iniciar_interfaz()
 
 
-
+    # Función para mostrar la interfaz de la pizza personalizada
     def custom_option():
         messagebox.showinfo("Opción Seleccionada", "Has seleccionado: Personalizada")
         options_window.destroy()  # Cerrar la ventana de opciones
 
         interfaz_personalizada()
     
+    # Crear y colocar widgets para la recomendación de pizza
     label_usuario = tk.Label(options_window, text="Usuario:")
     label_usuario.pack(pady=10)
     entry_usuario = tk.Entry(options_window, width=30)
@@ -74,4 +76,5 @@ def interfaz2():
     custom_button = tk.Button(options_window, text="Personalizada", command=custom_option)
     custom_button.pack(pady=10)
 
+    # Mostrar la ventana de opciones
     options_window.mainloop()
