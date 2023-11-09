@@ -4,6 +4,8 @@ El link al repositorio es el siguiente: https://github.com/Germiprogramer/Patron
 
 # Ejercicio 1
 
+De cara a este ejercicio, se ha decidido implementar el abstract factory en un archivo, debido a problemas de importaciones mutuas al intentar separar el código en distintos archivos.
+
 Se ha decidido crear una fábrica para realizar análisis estadísticos. Los resultados se presentan a continuación, considerando que las horas se han expresado en minutos:
 
 **Para la variable "Hora Solicitud":**
@@ -18,4 +20,4 @@ Se ha decidido crear una fábrica para realizar análisis estadísticos. Los res
 - **Moda:** La moda es 5, lo que indica que el mes número 5 es el más común en los datos. En términos calendario, esto podría referirse a mayo, dependiendo del sistema de numeración de meses que se esté utilizando (por ejemplo, si se empieza a contar desde enero como 1).
 - **Media:** La media es aproximadamente 6.66, indicando un promedio de 6 meses y 19 días. Dado que los meses son valores discretos y se expresan como números enteros, este valor podría representar una media ponderada en algún contexto específico, pero sin más información, es difícil interpretar su significado exacto.
 
-En resumen, estos datos sugieren patrones temporales significativos en las solicitudes e intervenciones, con ciertas horas y meses siendo más frecuentes que otros en el conjunto de datos proporcionado. La información sobre las horas y meses de mayor frecuencia puede ser útil para la planificación y gestión de recursos en función de los momentos de mayor demanda.
+La información sobre las horas y meses de mayor frecuencia puede ser útil para la planificación y gestión de recursos en función de los momentos de mayor demanda. Además, cabe destacar un punto extraño, y es que la hora media de intervención es antes que la hora media de solicitud. Esto se debe a que algunas solictudes nocturnas son intervenidasen la madrugada del día siguiente, causando un malente,dido en nuestro análisis.
