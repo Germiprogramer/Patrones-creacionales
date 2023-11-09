@@ -34,6 +34,14 @@ Se ha decidido crear una fábrica para realizar análisis estadísticos. Los res
 
 La información sobre las horas y meses de mayor frecuencia puede ser útil para la planificación y gestión de recursos en función de los momentos de mayor demanda. Además, cabe destacar un punto extraño, y es que la hora media de intervención es antes que la hora media de solicitud. Esto se debe a que algunas solictudes nocturnas son intervenidasen la madrugada del día siguiente, causando un malente,dido en nuestro análisis.
 
+Los graficos son los siguientes:
+
+<img width="478" alt="Captura de pantalla 2023-11-09 223938" src="https://github.com/Germiprogramer/Patrones-creacionales/assets/91720991/6041021d-3c2f-44c2-889d-2966381c5a0b">
+<img width="480" alt="Captura de pantalla 2023-11-09 223949" src="https://github.com/Germiprogramer/Patrones-creacionales/assets/91720991/3c1a534c-ed8e-4dcf-ac73-94f68d0d26f5">
+<img width="477" alt="Captura de pantalla 2023-11-09 223959" src="https://github.com/Germiprogramer/Patrones-creacionales/assets/91720991/0cf9bdc4-a552-4b98-903e-cc72f94c27b1">
+
+Desgraciadamente, parece que los gráficos se han guardado como imágenes en blanco en el proyecto, pero esto es lo que debería salir.
+
 # Ejercicio 2
 
 **Justificación patron builder**
