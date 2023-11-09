@@ -6,6 +6,18 @@ El link al repositorio es el siguiente: https://github.com/Germiprogramer/Patron
 
 De cara a este ejercicio, se ha decidido implementar el abstract factory en un archivo, debido a problemas de importaciones mutuas al intentar separar el código en distintos archivos.
 
+**Limpieza de datos**
+
+Conversión de Meses de Texto a Números:
+
+En muchos conjuntos de datos, los nombres de los meses se almacenan como texto (por ejemplo, 'ENERO', 'FEBRERO', etc.).
+Convertir los nombres de los meses de texto a números facilita su manipulación y análisis. Los algoritmos y análisis estadísticos suelen trabajar mejor con datos numéricos que con texto.
+La conversión de meses a números también permite realizar análisis de series temporales o comparaciones de datos en diferentes meses de una manera más efectiva.
+Conversión de Horas de Formato de 24 Horas a Minutos del Día:
+
+En algunos conjuntos de datos, las horas se almacenan en formato de 24 horas (por ejemplo, '14:30', '18:45', etc.).
+Convertir las horas a minutos del día permite una representación numérica más compacta y fácil de manejar. Por ejemplo, '14:30' se convierte a 870 minutos (14 horas * 60 minutos/hora + 30 minutos).
+
 Se ha decidido crear una fábrica para realizar análisis estadísticos. Los resultados se presentan a continuación, considerando que las horas se han expresado en minutos:
 
 **Para la variable "Hora Solicitud":**
@@ -37,3 +49,16 @@ El patrón Builder es un patrón creacional que se utiliza para construir objeto
 4. **Encapsulación de la lógica de construcción:** Al encapsular la lógica de construcción dentro de la clase PizzaBuilder, puedes ocultar los detalles de implementación de cómo se ensamblan las pizzas. Esto proporciona una capa de abstracción que protege el código cliente de cambios en la forma en que se construyen las pizzas. Si en el futuro cambias la forma en que se preparan ciertos ingredientes, solo necesitas actualizar el código dentro del builder sin afectar al resto de la aplicación.
 
 En resumen, el patrón Builder es una elección sólida para el diseño de una pizzería porque proporciona una forma estructurada y flexible de construir pizzas complejas con numerosas combinaciones posibles de ingredientes y opciones, al mismo tiempo que mejora la legibilidad, la mantenibilidad y la extensibilidad del código.
+
+___________________________________________________________________________________________________________________________________________________________________
+**Explicacion planteamiento**
+
+Al principio hemos realizado el patron builder para realizar la pizza. La interfaz Pizza proporciona una estructura común para construir diferentes tipos de pizzas. Los métodos abstractos garantizan que todas las clases concretas que implementan esta interfaz deben proporcionar una implementación específica para cada uno de estos métodos. Cada método representa un componente esencial de la pizza final, y al implementar la interfaz, se pueden crear pizzas personalizadas y específicas utilizando diferentes combinaciones de estos componentes. El código tiene una clase Director que orquesta el proceso de construcción del objeto y varios constructores (clases que implementan la interfaz Pizza) que implementan los pasos específicos para construir diferentes tipos de pizzas.
+
+Además, se ha realizado un pseudo gestor de clientes usando una interfaz gráfica de tkinter. Para ello hemos creado dos csv, clientes y pedidos. 
+
+La interfaz gráfica tiene 4 pantallas. La primera pide el registro para usuarios no pertecientes al dataset, y el inicio de sesión para usuarios que ya están registrados. Si se registran, se escriben sus datos en el dataset.
+
+La segunda interfaz permite elegir entre pizzas de menú o pizzas personalizadas. Además, permite recibir al usuario recomendaciones en función de las pizzas que más ha pedido. 
+
+La otras dos interfaces son para pedir pizza de menu o personalizada. Lo que pida el usuario se almacena en la base de datos de pedidos. Desgraciadamente, la pizza de menu no se almacena correctamente, no estoy seguro de por qué dado que al ser implementada al inicio no daba ningún tipo de error.
