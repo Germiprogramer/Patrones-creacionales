@@ -28,7 +28,7 @@ def interfaz_personalizada():
         # Save pizza order to pedidos.csv file
         with open('ejercicio2/datos/pedidos.csv', 'a', newline='') as file:
             writer = csv.writer(file)
-            writer.writerow([username_entr.get(), masa, salsa_base, ingredientes, coccion, presentacion, maridaje, extras])
+            writer.writerow([username_entr.get(), "personalizada", masa, salsa_base, ingredientes, coccion, presentacion, maridaje, extras])
 
         messagebox.showinfo("Pedido Realizado", "Pedido registrado con éxito")
 

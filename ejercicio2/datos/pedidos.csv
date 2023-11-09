@@ -1,8 +1,10 @@
-usuario, masa, salsa, ingredientes, borde, tamaño, maridaje, extra
+usuario,tipo,masa,salsa,ingredientes,borde,tamaño,maridaje,extra
 germanllorente,barbacoa,Pizza Barbacoa
 germanllorente,Personalizada,s
 germanllorente14,personalizada,
-germanllorente,Delgada,Tomate,pizza,Suave,Normal,Vino tinto,a
-germi,Normal,Blanca,BC,Suave,Normal,Vino tinto,DW
-GERMI,Delgada,Tomate,DS,Suave,Normal,Vino tinto,S
-germanllorente,Delgada,Tomate,tomate; lechuga; messi,Suave,Normal,Refresco,tarta de queso
+germanllorente, personalizada, Delgada,Tomate,pizza,Suave,Normal,Vino tinto,a
+germi, personalizada, Normal,Blanca,BC,Suave,Normal,Vino tinto,DW
+GERMI, personalizada, Delgada,Tomate,DS,Suave,Normal,Vino tinto,S
+germanllorente, personalizada, Delgada,Tomate,tomate; lechuga; messi,Suave,Normal,Refresco,tarta de queso
+germanllorente,personalizada,Delgada,Tomate,d,Suave,Normal,Vino tinto,d
+germanllorente,personalizada,Gruesa,Blanca,platano-macadamia,Suave,Normal,Vino tinto,none
